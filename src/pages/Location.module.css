@@ -1,0 +1,287 @@
+.page {
+  display: flex;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  padding: 2rem; /* 전체적인 상하좌우 여백 추가 */
+  gap: 2rem; /* 지도와 사이드바 사이 간격 */
+  background: #fdfdfd;
+}
+
+.mapSection {
+  flex: 1;
+  position: relative;
+  background: #f3f4f6;
+  border-radius: 16px; /* 둥근 모서리로 부드럽게 */
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.mapIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.sidebar {
+  width: 380px;
+  background: transparent; /* 배경 투명으로 변경 */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebarTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.searchRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.searchBtn {
+  padding: 0.6rem 1.25rem;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.searchBtn:hover {
+  background: #1d4ed8;
+}
+
+.locationList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.locationCard {
+  padding: 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.locationCard.active {
+  background: #eff6ff;
+  border: 1px solid #3b82f6;
+}
+
+.locationCardName {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.locationCardAddr {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.locationCardSub {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.infoCard {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 320px;
+  width: 90%;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+  border: 1px solid #e5e7eb;
+}
+
+.infoCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.infoCardAddr {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.infoCardRating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.infoCardLinks {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.infoCardLinks a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.infoCardLinks a:hover {
+  text-decoration: underline;
+}
+
+.loading,
+.error {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.scrollHint {
+  text-align: center;
+  padding: 0.5rem;
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 64px);
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .mapSection {
+    height: 400px;
+    min-height: 400px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+  }
+
+  .sidebarTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .searchRow {
+    margin-bottom: 1rem;
+  }
+
+  .searchInput,
+  .searchBtn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .locationList {
+    max-height: 300px;
+  }
+
+  .locationCard {
+    padding: 1rem;
+  }
+
+  .infoCard {
+    max-width: 280px;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0.75rem;
+    min-height: calc(100vh - 56px);
+  }
+
+  .mapSection {
+    height: 300px;
+    min-height: 300px;
+    border-radius: 12px;
+  }
+
+  .sidebarTitle {
+    font-size: 1.1rem;
+  }
+
+  .locationCard {
+    padding: 0.875rem;
+  }
+
+  .locationCardName {
+    font-size: 0.95rem;
+    word-break: keep-all;
+  }
+
+  .locationCardAddr {
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+
+  .infoCard {
+    max-width: 90%;
+    padding: 0.75rem;
+  }
+
+  .infoCardTitle {
+    font-size: 0.95rem;
+  }
+
+  .infoCardAddr,
+  .infoCardLinks a {
+    font-size: 0.8rem;
+  }
+}

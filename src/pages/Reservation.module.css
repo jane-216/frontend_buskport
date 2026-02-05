@@ -1,0 +1,260 @@
+.page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: #1a1a1a;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=2070") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+}
+
+.titleLine {
+  width: 1px;
+  height: 60px;
+  background: #fff;
+  margin: 1rem auto 4rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.5rem;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.select option {
+  background-color: #1a1a24; /* 어두운 배경색 설정 */
+  color: #fff; /* 텍스트 흰색 설정 */
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.timeSlot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submitBtn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.message {
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.message.error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.message.success {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+
+.message.info {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .titleLine {
+    height: 40px;
+    margin: 0.75rem auto 2.5rem;
+  }
+
+  .form {
+    gap: 1.75rem;
+  }
+
+  .label {
+    font-size: 0.85rem;
+  }
+
+  .checkboxGroup {
+    gap: 1rem;
+  }
+
+  .checkboxLabel {
+    font-size: 0.8rem;
+  }
+
+  .timeGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .timeSlot {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    justify-content: center;
+  }
+
+  .timeSlot.selected {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+  }
+
+  .submitBtn {
+    margin-top: 2rem;
+    padding: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .titleLine {
+    height: 30px;
+    margin: 0.5rem auto 2rem;
+  }
+
+  .form {
+    gap: 1.5rem;
+  }
+
+  .input,
+  .select {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+
+  .checkboxGroup {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .timeGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .timeSlot {
+    font-size: 0.75rem;
+  }
+
+  .submitBtn {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .message {
+    font-size: 0.85rem;
+    padding: 0.625rem;
+  }
+}
