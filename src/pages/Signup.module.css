@@ -1,0 +1,186 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  background: #fdfdfd;
+  padding: 2rem;
+}
+
+.signupBox {
+  width: 100%;
+  max-width: 500px;
+  padding: 3rem 2.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid .field {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.input,
+.select,
+.textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #7c3aed;
+}
+
+.textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitBtn:hover {
+  background: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.error {
+  color: #ef4444;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.loginLink {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.loginLink a {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1.5rem 1rem;
+    min-height: calc(100vh - 64px);
+  }
+
+  .signupBox {
+    padding: 2rem 1.5rem;
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .input,
+  .select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    min-height: calc(100vh - 56px);
+    padding: 1rem 0.75rem;
+  }
+
+  .signupBox {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .input, .select, .textarea {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .submitBtn {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+}

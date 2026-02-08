@@ -4,7 +4,8 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
 import { Schedule } from './pages/Schedule';
 import { Location } from './pages/Location';
-import { Reservation } from './pages/Reservation';
+import { Login } from './pages/Login';
+import { Signup } from './pages/Signup';
 import './App.css';
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="schedule" element={<Schedule />} />
           <Route path="location" element={<Location />} />
-          <Route path="reservation" element={<Reservation />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
         </Route>
       </Routes>
     </BrowserRouter>
