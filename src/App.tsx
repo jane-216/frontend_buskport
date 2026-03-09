@@ -5,6 +5,8 @@ import { Home } from './pages/Home';
 import { Schedule } from './pages/Schedule';
 import { Location } from './pages/Location';
 import { Community } from './pages/Community';
+import { PostDetail } from './pages/PostDetail';
+import { PostWrite } from './pages/PostWrite';
 import { Reservation } from './pages/Reservation';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
@@ -20,6 +22,8 @@ function App() {
           <Route path="schedule" element={<Schedule />} />
           <Route path="location" element={<Location />} />
           <Route path="community" element={<Community />} />
+          <Route path="community/write" element={<PostWrite />} />
+          <Route path="community/:postId" element={<PostDetail />} />
           <Route path="reservation" element={<Reservation />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
